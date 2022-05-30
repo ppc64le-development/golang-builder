@@ -1,0 +1,22 @@
+#!/bin/bash
+# For bulding golang from source we should have golang installed from packages
+# Script for bulding golang using source code 
+
+
+
+#Build Golang's latest version using source code
+
+git clone https://github.com/golang/go  $HOME/go
+
+cd $HOME/go/src/
+
+./all.bash
+
+# to remove previos version of golang
+rm -rf /usr/local/go
+
+cp -r $HOME/go /usr/local
+
+echo "Golang is done with below version"
+
+go version
